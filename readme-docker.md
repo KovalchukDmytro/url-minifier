@@ -6,5 +6,6 @@
 # artisan-команды:
 - Сбросить кеш: docker-compose exec app php artisan optimize
 - Выполнить миграции: docker-compose exec app php artisan migrate
+- Запустить тесты: docker-compose exec app php artisan test
 # composer-команды:
 - Установка зависимостей: docker-compose exec app composer install

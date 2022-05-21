@@ -8,6 +8,8 @@ use App\Helpers\UrlFormatHelper;
 use App\Http\Requests\UrlCreateRequest;
 use App\Repositories\UrlRepository;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 
@@ -35,9 +37,9 @@ class UrlController extends Controller
 
     /**
      * @param UrlCreateRequest $request
-     * @return Application|RedirectResponse|Redirector
+     * @return Factory|View|Application
      */
-    public function addUrl(UrlCreateRequest $request)
+    public function addUrl(UrlCreateRequest $request): Factory|View|Application
     {
         $url = $request->get('url');
         $expiredAt = $request->get('expired_at');
