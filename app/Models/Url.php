@@ -121,13 +121,4 @@ class Url extends Model
     {
         return $this->updated_at;
     }
-
-    /**
-     * Увеличиваем инкремент просмотра
-     */
-    public function updateViewCounter(): void
-    {
-        $this->views++;
-        $this->save();
-    }
 }

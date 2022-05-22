@@ -30,7 +30,7 @@ class UrlController extends Controller
             return redirect('/404');
         }
 
-        $urlModel->updateViewCounter();
+        UrlRepository::incrementViewCounter($urlModel);
 
         return redirect($urlModel->getUrl());
     }

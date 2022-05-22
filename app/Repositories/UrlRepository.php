@@ -39,4 +39,15 @@ class UrlRepository
             'url_mask' => (int)(microtime(true) * 10000),
         ]);
     }
+
+    /**
+     * @param Url $urlModel
+     * @return bool
+     */
+    public static function incrementViewCounter(Url $urlModel): bool
+    {
+        $urlModel->setViews($urlModel->getViews() + 1);
+
+        return (bool)$urlModel->save();
+    }
 }
